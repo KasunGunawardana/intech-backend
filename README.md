@@ -1,13 +1,14 @@
 # Admin dashboard for intech.edu.lk (Laravel 8)
 
-Modules:
-Page
-Course
-Instructor
-Announcement
-Blog
-Gallery
-Slider
-Logo Slider
-Effects (Christmas, New Year)
+### Modules:
+
+Page<br/>
+Course<br/>
+Instructor<br/>
+Announcement<br/>
+Blog<br/>
+Gallery<br/>
+Slider<br/>
+Logo Slider<br/>
+Effects (Christmas, New Year)<br/>
 Users
