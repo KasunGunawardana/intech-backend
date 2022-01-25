@@ -18,4 +18,6 @@ if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
     return false;
 }
 
+// adding fake comments to test git
+
 require_once __DIR__.'/public/index.php';
