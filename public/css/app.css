@@ -1,0 +1,12 @@
+.uk-card-default:hover {
+    box-shadow: 0 5px 22px rgb(0 0 0 / 20%);
+}
+
+.uk-link:hover, a:hover {
+    text-decoration: none;
+}
+
+.uk-nav-default .uk-nav-sub a:hover,
+.uk-nav-default a.uk-active {
+    color: #000;
+}
