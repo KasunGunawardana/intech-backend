@@ -1,5 +1,9 @@
 # Admin dashboard for intech.edu.lk (Laravel 8)
 
+### Dashboard snapshot
+
+![dashboard snapshot](./dashboard-snapshot.PNG)
+
 ### Modules:
 
 Page<br/>
