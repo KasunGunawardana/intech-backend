@@ -14,5 +14,5 @@ Blog<br/>
 Gallery<br/>
 Slider<br/>
 Logo Slider<br/>
-Effects (Christmas, New Year)<br/>
-Users
+Effect (Christmas, New Year)<br/>
+User
