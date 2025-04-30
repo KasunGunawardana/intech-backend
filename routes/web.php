@@ -150,10 +150,10 @@ Route::middleware(['auth'])->group(function(){
 
     Route::delete('logo-slider/{id}/delete', 'App\Http\Controllers\LogoSliderController@destroy')->name('logo.destroy');
 
-    // Route::get('/clear-cache', function() {
-    //     Artisan::call('cache:clear');
-    //     return redirect()->back();
-    // });
+    Route::get('clear-cache', function() {
+        Artisan::call('optimize:clear');
+        return redirect()->back();
+    });
     
 });
 

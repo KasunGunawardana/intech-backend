@@ -1,0 +1,565 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.fixed-spinner {
+    background: #000;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    visibility: hidden;
+    opacity: 0;
+}
+.fixed-spinner.visible {
+    visibility: visible;
+    opacity: 1;
+}
+.la-ball-circus,
+.la-ball-circus > div {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.la-ball-circus {
+    display: block;
+    font-size: 0;
+    color: #fff;
+}
+.la-ball-circus.la-dark {
+    color: #fff;
+}
+.la-ball-circus > div {
+    display: inline-block;
+    float: none;
+    background-color: currentColor;
+    border: 0 solid currentColor;
+}
+.la-ball-circus {
+    width: 16px;
+    height: 16px;
+}
+.la-ball-circus > div {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    display: block;
+    width: 16px;
+    width: 100%;
+    height: 16px;
+    height: 100%;
+    border-radius: 100%;
+    opacity: 0.5;
+    -webkit-animation: ball-circus-position 2.5s infinite
+            cubic-bezier(0.25, 0, 0.75, 1),
+        ball-circus-size 2.5s infinite cubic-bezier(0.25, 0, 0.75, 1);
+    -moz-animation: ball-circus-position 2.5s infinite
+            cubic-bezier(0.25, 0, 0.75, 1),
+        ball-circus-size 2.5s infinite cubic-bezier(0.25, 0, 0.75, 1);
+    -o-animation: ball-circus-position 2.5s infinite
+            cubic-bezier(0.25, 0, 0.75, 1),
+        ball-circus-size 2.5s infinite cubic-bezier(0.25, 0, 0.75, 1);
+    animation: ball-circus-position 2.5s infinite cubic-bezier(0.25, 0, 0.75, 1),
+        ball-circus-size 2.5s infinite cubic-bezier(0.25, 0, 0.75, 1);
+}
+.la-ball-circus > div:nth-child(1) {
+    -webkit-animation-delay: 0s, -0.5s;
+    -moz-animation-delay: 0s, -0.5s;
+    -o-animation-delay: 0s, -0.5s;
+    animation-delay: 0s, -0.5s;
+}
+.la-ball-circus > div:nth-child(2) {
+    -webkit-animation-delay: -0.5s, -1s;
+    -moz-animation-delay: -0.5s, -1s;
+    -o-animation-delay: -0.5s, -1s;
+    animation-delay: -0.5s, -1s;
+}
+.la-ball-circus > div:nth-child(3) {
+    -webkit-animation-delay: -1s, -1.5s;
+    -moz-animation-delay: -1s, -1.5s;
+    -o-animation-delay: -1s, -1.5s;
+    animation-delay: -1s, -1.5s;
+}
+.la-ball-circus > div:nth-child(4) {
+    -webkit-animation-delay: -1.5s, -2s;
+    -moz-animation-delay: -1.5s, -2s;
+    -o-animation-delay: -1.5s, -2s;
+    animation-delay: -1.5s, -2s;
+}
+.la-ball-circus > div:nth-child(5) {
+    -webkit-animation-delay: -2s, -2.5s;
+    -moz-animation-delay: -2s, -2.5s;
+    -o-animation-delay: -2s, -2.5s;
+    animation-delay: -2s, -2.5s;
+}
+.la-ball-circus.la-sm {
+    width: 8px;
+    height: 8px;
+}
+.la-ball-circus.la-sm > div {
+    width: 8px;
+    height: 8px;
+}
+.la-ball-circus.la-2x {
+    width: 32px;
+    height: 32px;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    position: absolute;
+}
+.la-ball-circus.la-2x > div {
+    width: 32px;
+    height: 32px;
+}
+.la-ball-circus.la-3x {
+    width: 48px;
+    height: 48px;
+}
+.la-ball-circus.la-3x > div {
+    width: 48px;
+    height: 48px;
+}
+@-webkit-keyframes ball-circus-position {
+    50% {
+        left: 100%;
+    }
+}
+@-moz-keyframes ball-circus-position {
+    50% {
+        left: 100%;
+    }
+}
+@-o-keyframes ball-circus-position {
+    50% {
+        left: 100%;
+    }
+}
+@keyframes ball-circus-position {
+    50% {
+        left: 100%;
+    }
+}
+@-webkit-keyframes ball-circus-size {
+    50% {
+        -webkit-transform: scale(0.3, 0.3);
+        transform: scale(0.3, 0.3);
+    }
+}
+@-moz-keyframes ball-circus-size {
+    50% {
+        -moz-transform: scale(0.3, 0.3);
+        transform: scale(0.3, 0.3);
+    }
+}
+@-o-keyframes ball-circus-size {
+    50% {
+        -o-transform: scale(0.3, 0.3);
+        transform: scale(0.3, 0.3);
+    }
+}
+@keyframes ball-circus-size {
+    50% {
+        -webkit-transform: scale(0.3, 0.3);
+        -moz-transform: scale(0.3, 0.3);
+        -o-transform: scale(0.3, 0.3);
+        transform: scale(0.3, 0.3);
+    }
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.serviceAre.serviceAre2 ul li {
+    display: block;
+}
+
+.searchForms {
+    width: 100%;
+    height: auto;
+    margin: 10% auto 0;
+}
+
+.rev_slider .tp-caption {
+    text-transform: uppercase;
+}
+
+.commonSection {
+    padding: 90px 0;
+}
+
+.singleTM .team_social {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    right: 20px;
+}
+
+.singleTM .team_social ul {
+    padding: 0;
+}
+
+.singleTM .team_social ul li {
+    font-size: 15px;
+}
+
+.singleTM:hover .team_social {
+    visibility: visible;
+    opacity: 1;
+    left: 20px;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+}
+
+.banner_content h1 {
+    font-size: 55px;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.banner_content.single_course h1 {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.courseDetails .mpw_item {
+    padding-left: 0;
+    margin-bottom: 10px;
+    padding-bottom: 11px;
+}
+
+.courseDetails .meipaly_post_widget {
+    padding: 30px 40px;
+}
+
+.courseDetails .meipaly_post_widget p {
+    margin-bottom: 0;
+}
+
+.courseDetails .sidebar.sticky {
+    position: sticky;
+    top: 130px;
+}
+
+#coursesDiv {
+    position: absolute;
+    width: 96%;
+}
+
+#coursesDiv .dropdown-menu {
+    width: 100%;
+    background-color: transparent;
+    max-height: 220px;
+    overflow-y: scroll;
+    padding: 2px 0;
+    margin-top: 10px;
+    -webkit-box-shadow: 0 2px 25px rgb(0 0 0 / 7%);
+    box-shadow: 0 2px 25px rgb(0 0 0 / 10%);
+}
+
+#coursesDiv .dropdown-menu li a {
+    display: block;
+    border-bottom: 1px solid #ededed;
+    padding: 5px 15px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.course-card .card-body {
+    padding: 1.25rem;
+}
+
+.course-card .card-body p {
+    min-height: 85px;
+}
+
+.course-card .card-img-link {
+    height: 100%;
+}
+
+.course-card a h4 {
+    color: #444444;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 15px;
+    min-height: 52px;
+}
+
+.course-card .lbi_details .lbid_date {
+    font-size: 10px;
+    line-height: 0.8;
+    letter-spacing: 1px;
+    font-weight: 700;
+    display: block;
+    height: 31px;
+    width: auto;
+    background: #000;
+    color: #fff;
+    padding: 11px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+    display: inline-block;
+}
+.course-card .lbi_details .lbid_date:hover {
+}
+
+.course-card a:hover h4 {
+    color: #004f98;
+}
+
+.course-img-wrapper {
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+.course-img-wrapper > div {
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+/* .course-img-wrapper img {
+    transition: 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(1);
+} */
+
+.course-img-wrapper .image-mask {
+    position: relative;
+    width: 100%;
+}
+
+.course-card .card-img-link .course-img-wrapper img {
+    aspect-ratio: 50/41;
+}
+
+.course-card:hover .course-img-wrapper > div {
+    transform: scale(1.1);
+}
+
+.course-img-wrapper .duration {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 10px 15px;
+    background-color: #004f98;
+    transform: translateX(100%);
+    transition: 1s;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.course-card:hover .duration {
+    transform: translateX(0);
+}
+
+.singlefolio:after {
+    content: none;
+}
+
+.singlefolio .folioHover {
+    position: static !important;
+    left: 0;
+    opacity: 1 !important;
+}
+
+#accordion .card-header {
+    color: #fff;
+    background: #000;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.blog_details ul {
+    padding-left: 30px;
+}
+
+.blog_details ul li::before {
+    content: "\f14a";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #004f98 !important;
+    position: relative;
+    list-style-type: disc;
+    margin: 0 10px 0 -25px;
+}
+
+.icon_box_2 .learnM {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 0.8;
+    letter-spacing: 1.12px;
+    text-transform: uppercase;
+    color: #000;
+    position: relative;
+}
+.icon_box_2 .learnM:after {
+    width: 0;
+    height: 1px;
+    content: "";
+    background: #2e3192;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -4px;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+.icon_box_2 .learnM:hover:after {
+    width: 100%;
+}
+.icon_box_2 .learnM:hover {
+    color: #2e3192;
+}
+
+.serviceArea.serviceArea2 ul li {
+    display: block;
+}
+
+.serviceArea.serviceArea2 ul li::before {
+    content: "\f14a";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #004f98 !important;
+    position: relative;
+    list-style-type: disc;
+    margin: 0 10px 0 -20px;
+}
+
+.trustClient {
+    margin-top: 0;
+}
+
+.abci_content {
+    padding: 55px 0 0 60px;
+    margin-left: -17px;
+}
+
+.team .slick-dots {
+    position: static;
+    margin: 50px auto 0;
+}
+
+.team .team_slider {
+    margin-top: 25px;
+}
+
+.popup__menu .footer__contacts a {
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .hidden-sm {
+        display: none !important;
+    }
+
+    .header_01 {
+        padding: 30px 0 0;
+    }
+
+    .logo {
+        padding: 0 0 30px;
+        text-align: center;
+    }
+
+    .navigator {
+        padding-top: 0;
+        padding: 0 0 30px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .sfCloser {
+        top: 20px;
+    }
+
+    .searchForms {
+        margin: 15% auto 0;
+    }
+
+    #coursesDiv .dropdown-menu li a {
+        padding: 3px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .d-sm-flex-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mx-sm-auto {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    .serviceArea ul:first-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    #coursesDiv .dropdown-menu {
+        max-height: 400px;
+    }
+}
+
+#coursesDiv .dropdown-menu li a:hover {
+    color: #000;
+}
+
+#coursesDiv .dropdown-menu li:last-child a {
+    border-bottom: none;
+}

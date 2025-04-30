@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Intech Admin panel</title>
+        <title>{{ $companyDetails->company_name }} Admin panel</title>
 
         <meta charset="UTF-8">
-        <meta name="description" content="Clean and responsive administration panel">
-        <meta name="keywords" content="Admin,Panel,HTML,CSS,XML,JavaScript">
-        <meta name="author" content="Erik Campobadal">
+        <meta name="description" content="{{ $companyDetails->company_name }} | Discover the World With Study">
+        <meta name="keywords" content="Admin,Panel,{{ $companyDetails->company_name }}">
+        <meta name="author" content="Kasun Gunawardana">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="{{ asset('css/uikit.min.css') }}" rel="stylesheet">
@@ -25,7 +25,7 @@
                 <nav uk-navbar>
                     <div class="uk-navbar-left">
                         <a href="" class="uk-navbar-item uk-logo">
-                            Admin - intech.edu.lk
+                            Admin - {{ $companyDetails->company_name }}
                         </a>
                     </div>
                 </nav>

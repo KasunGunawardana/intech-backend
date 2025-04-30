@@ -8,9 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Intech Dashboard | Reinvent Your Future</title>
+    <title>{{ $companyDetails->company_name }} Dashboard | Reinvent Your Future</title>
     <meta name="keywords" content="Graphic, multimedia 3D, multimedia, multimedia Video, Graphic Design, ICT, 3D Animation, AutoCAD, Photography, Video Production, Video Editing, 2D Animation, Computer Science, Web Designing, English, VFX" >
-<meta name="description" content="INTECH(Indeepa college of technology) has been founded with the Nobel vision of creating innovative multitalented professionals in the area of IT/ Business/Engineering and Biomedical sciences while enabling them to develop core competencies & skills towards the highly sophisticated professional carrier." >	
+<meta name="description" content="{{ $companyDetails->company_name }} has been founded with the Nobel vision of creating innovative multitalented professionals in the area of IT/ Business/Engineering and Biomedical sciences while enabling them to develop core competencies & skills towards the highly sophisticated professional carrier." >	
 
     <!-- Scripts -->
 
@@ -44,7 +44,7 @@
                     <div class="uk-navbar-left">
                         <a id="sidebar_toggle" class="uk-navbar-toggle" data-uk-navbar-toggle-icon ></a>
                         <a href="#" class="uk-navbar-item uk-logo">
-                            intech.edu.lk
+                            {{ $companyDetails->company_name }}
                         </a>
                         <!-- <a class="navbar-brand" href="{{ url('/') }}">
                             {{ config('app.name', 'Laravel') }}

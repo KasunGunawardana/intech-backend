@@ -13,10 +13,25 @@ Graphic, multimedia 3D, multimedia, multimedia Video, Graphic Design, ICT, 3D An
 @endsection
 
 @section('content')
-<div class="banner-full text-white overflow-hidden" style="background-image: linear-gradient(-45deg, #0091d5 0%, #004f98 100%);">
+<div class="banner-full text-white overflow-hidden" style="background-image: linear-gradient(-45deg, #004f98 0%, #033d93  100%);">
     <canvas class="constellation" data-radius="0"></canvas>
     <div class="uk-container banner-container">
-      <div class="main-slider" data-provide="slider" data-autoplay="false" data-fade="true" data-arrows="true">
+      <div class="main-slider" data-provide="slider" data-autoplay="true" data-autoplay-speed="5000" data-fade="true" data-arrows="true">
+        <div class="py-2">
+          <div>
+            <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-2@m" data-uk-grid>
+              <div class="uk-flex uk-flex-center uk-flex-column overflow-hidden">
+                <div class="slider-content">
+                  {!! App\Http\Controllers\WelcomeController::renderBlock(1); !!}
+                  <a href="all-courses.html" class="common-btn btn-round">Read More &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
+                </div>
+              </div>
+      <div class="slider-img">
+        <div><img src="{{ asset('front/images/bcs_new.png') }}" alt="Computer Engineer with BCS (UK)?"></div>
+      </div>
+            </div>
+          </div>
+        </div>
         <div class="py-2">
           <div>
             <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-2@m" data-uk-grid>
@@ -24,9 +39,9 @@ Graphic, multimedia 3D, multimedia, multimedia Video, Graphic Design, ICT, 3D An
                 <div class="slider-content">
                   <h5 class="intro-title">Wish to become a</h5>
                   <div class="intro">
-                    <h3><span class="fw-500" data-typing="Graphic Designer?, Photography?, Web Designer?, Web Developer?, Video Editor?, 3D Animator?" data-type-speed="80"></span></h3>
+                    <h3><span class="fw-500" data-typing="Graphic Designer?, Photographer?, Web Designer?, Web Developer?, Video Editor?, 3D Animator?" data-type-speed="80"></span></h3>
                   </div>
-                  {!! App\Http\Controllers\WelcomeController::renderBlock(1); !!}
+                  {!! App\Http\Controllers\WelcomeController::renderBlock(2); !!}
                   <a href="{{ URL::to('all-courses') }}" class="common-btn btn-round">Read More &nbsp;&nbsp;<i class="fas fa-chevron-right"></i></a>
                 </div>
               </div>
@@ -3281,7 +3296,7 @@ CHxGKAEAAIDP8x8BBgDEOe3DjZ6ubwAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 91.1
             </div>
           </div>
         </div>
-        <div class="py-2">
+        {{-- <div class="py-2">
           <div>
             <div class="uk-grid-column-small uk-grid-row-large uk-child-width-1-2@m" data-uk-grid>
               <div class="uk-flex uk-flex-center uk-flex-column overflow-hidden">
@@ -3297,48 +3312,79 @@ CHxGKAEAAIDP8x8BBgDEOe3DjZ6ubwAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 91.1
             </div>
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
 
       <div class="icons-wrapper" uk-scrollspy="target: > a; cls: uk-animation-slide-bottom; delay: 300">
-        <a href="all-courses.html" class="icon__bubble" target="_blank">
+        <a href="{{ URL::to('all-courses') }}" class="icon__bubble" target="_blank">
           <img class="shadow-6" src="{{ asset('front/images/courses/icons/3ds.png') }}" alt="3ds">
         </a>
 
-        <a href="all-courses.html" class="icon__bubble" target="_blank">
+        <a href="{{ URL::to('all-courses') }}" class="icon__bubble" target="_blank">
           <img class="shadow-6" src="{{ asset('front/images/courses/icons/ae.png') }}" alt="ae">
         </a>
 
-        <a href="all-courses.html" class="icon__bubble" target="_blank">
+        <a href="{{ URL::to('all-courses') }}" class="icon__bubble" target="_blank">
           <img class="shadow-6" src="{{ asset('front/images/courses/icons/ai.png') }}" alt="ai">
         </a>
 
-        <a href="all-courses.html" class="icon__bubble" target="_blank">
-          <img class="shadow-6" src="{{ asset('front/images/courses/icons/dn.png') }}" alt="dn">
+        <a href="{{ URL::to('all-courses') }}" class="icon__bubble" target="_blank">
+          <img class="shadow-6" src="{{ asset('front/images/courses/icons/au.png') }}" alt="au">
         </a>
 
-        <a href="all-courses.html" class="icon__bubble" target="_blank">
+        <a href="{{ URL::to('all-courses') }}" class="icon__bubble" target="_blank">
           <img class="shadow-6" src="{{ asset('front/images/courses/icons/id.png') }}" alt="id">
         </a>
 
-        <a href="all-courses.html" class="icon__bubble" target="_blank">
+        <a href="{{ URL::to('all-courses') }}" class="icon__bubble" target="_blank">
           <img class="shadow-6" src="{{ asset('front/images/courses/icons/ma.png') }}" alt="ma">
         </a>
 
-        <a href="all-courses.html" class="icon__bubble" target="_blank">
+        <a href="{{ URL::to('all-courses') }}" class="icon__bubble" target="_blank">
           <img class="shadow-6" src="{{ asset('front/images/courses/icons/pr.png') }}" alt="pr">
         </a>
 
-        <a href="all-courses.html" class="icon__bubble" target="_blank">
+        <a href="{{ URL::to('all-courses') }}" class="icon__bubble" target="_blank">
           <img class="shadow-6" src="{{ asset('front/images/courses/icons/psd.png') }}" alt="psd">
         </a>
       </div>
     </div>
     </div>
-  
+
+    @if ($logoslider->visiblity)
+      @if ($logo_images->count() == 3)
+      <div class="logos-full">
+        <div class="uk-container">
+          <div class="text-center">
+            <h4>Our Affiliations & Partners</h4>
+          </div>
+            <div class="logo-slider" data-provide="slider" data-slides-to-show="3" data-autoplay="true" data-autoplay-speed="5000" data-arrows="true">
+              @foreach ($logo_images as $logo_image)
+                <div class="slider-item triple"><div style="background-image: url({{ asset('storage/' . $logo_image->image) }}); background-position: center; background-size: cover;"><img src="{{ asset('front/images/logo-mask.png') }}" alt="{{ $logo_image->name }}"></div></div>
+              @endforeach
+            </div>
+        </div>
+      </div>
+      @endif
+
+      @if ($logo_images->count() > 3)
+      <div class="logos-full">
+        <div class="uk-container">
+          <div class="text-center">
+            <h4>Our Affiliations & Partners</h4>
+          </div>
+            <div class="logo-slider" data-provide="slider" data-slides-to-show="4" data-autoplay="true" data-autoplay-speed="5000" data-arrows="true">
+              @foreach ($logo_images as $logo_image)
+                <div class="slider-item"><div style="background-image: url({{ asset('storage/' . $logo_image->image) }}); background-position: center; background-size: cover;"><img src="{{ asset('front/images/logo-mask.png') }}" alt="{{ $logo_image->name }}"></div></div>
+              @endforeach
+            </div>
+        </div>
+      </div>
+      @endif
+    @endif  
 
 
-<div class="intro-full overflow-hidden">
+<div class="intro-full home overflow-hidden wave_bg_xs">
   <div class="uk-container uk-text-center">
     <div data-uk-scrollspy="target: > h2, h4,p; cls: uk-animation-slide-bottom; delay: 400">
       {!! App\Http\Controllers\WelcomeController::renderBlock(3); !!}
@@ -3382,7 +3428,7 @@ CHxGKAEAAIDP8x8BBgDEOe3DjZ6ubwAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 91.1
                   <div class="icons-div uk-text-left@m">
                     <img src="{{ asset('front/images/courses/icons/psd.png') }}" alt="psd">
                     <img src="{{ asset('front/images/courses/icons/ai.png') }}" alt="ai">
-                    <img src="{{ asset('front/images/courses/icons/dn.png') }}" alt="dn">
+                    {{-- <img src="{{ asset('front/images/courses/icons/dn.png') }}" alt="dn"> --}}
                     <img src="{{ asset('front/images/courses/icons/id.png') }}" alt="id">
                   </div>
                 </div>
@@ -3405,6 +3451,7 @@ CHxGKAEAAIDP8x8BBgDEOe3DjZ6ubwAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 91.1
                   <div class="icons-div uk-text-left@m">
                     <img src="{{ asset('front/images/courses/icons/pr.png') }}" alt="pr">
                     <img src="{{ asset('front/images/courses/icons/ae.png') }}" alt="ae">
+                    <img src="{{ asset('front/images/courses/icons/au.png') }}" alt="ae">
                   </div>
                 </div>
                 <div class="sub-content uk-flex uk-flex-column uk-flex-middle uk-flex-center">
@@ -3457,7 +3504,7 @@ CHxGKAEAAIDP8x8BBgDEOe3DjZ6ubwAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 91.1
 </div>
 
 
-@if ($announcements->count() > 0)
+{{-- @if ($announcements->count() > 0)
 <div class="custom-poster-full">
   @if ($announcements->count() > 1)
   <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: pull; autoplay: true">
@@ -3482,6 +3529,26 @@ CHxGKAEAAIDP8x8BBgDEOe3DjZ6ubwAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 91.1
   
 </div>
       
+@endif --}}
+
+@if ($announcements->count() > 0)
+<div class="slider-dots-inside" data-provide="slider" data-arrows="true" data-autoplay="true" data-autoplay-speed="8000" data-dots="true">
+  @if ($announcements->count() > 1)
+
+      @foreach ($announcements as $announcement)
+      <div>
+        <img class="w-100" src="{{ asset('storage') . '/' . $announcement->image }}" alt="{{ $announcement->name }}">
+      </div>
+      @endforeach
+    
+  @else
+    @foreach ($announcements as $announcement)
+      <img class="w-100" src="{{ asset('storage') . '/' . $announcement->image }}" alt="{{ $announcement->name }}">
+    @endforeach
+  @endif
+  
+</div>
+      
 @endif
 
 <div class="why-choose-us">
@@ -3497,7 +3564,7 @@ CHxGKAEAAIDP8x8BBgDEOe3DjZ6ubwAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 91.1
   </div>
 </div>
 
-<div class="about-us">
+<div class="about-us wave_bg_xs">
   <div class="uk-container">
     <div class="uk-grid-column-small uk-grid-row-medium uk-flex-middle uk-child-width-1-2@m" data-uk-grid="">
       <div class="uk-text-center">
@@ -3526,8 +3593,51 @@ CHxGKAEAAIDP8x8BBgDEOe3DjZ6ubwAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 91.1
 
 @endsection
 
+@section('css')
+<style>
+.slick-dots li.slick-active button {
+  background-color: #ffffff;
+}
+
+.slick-dots li button {
+  border: 2px solid #ffffff;
+  background: transparent;
+  height: 10px;
+  width: 10px;
+  border-radius: 0;
+}
+.logos-full {
+    padding: 35px 0;
+}
+
+.logos-full h4 {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 22px;
+    color: #231f20;
+}
+
+@media (min-width: 640px) and (max-width: 1199px) {
+  .logos-full h4 {
+    padding-bottom: 20px
+  }
+}
+@media (max-width: 640px) {
+  .logos-full h4 {
+      font-size: 18px;
+  }
+}
+</style>
+@endsection
+
 @section('scripts')
 <script src="{{ asset('front/js/main.js') }}"></script>
+<script src="{{ asset('front/js/tilt.jquery.min.js') }}"></script>
+<script>
+  $('.uk-card').tilt({
+    maxTilt: 9,
+  });
+</script>
 <script>
   $('ul.uk-navbar-nav li:first-child').find('a').addClass('uk-active');
 </script>

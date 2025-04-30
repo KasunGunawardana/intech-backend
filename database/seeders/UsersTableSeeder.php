@@ -24,18 +24,18 @@ class UsersTableSeeder extends Seeder
         		'name' => 'Kasun',
         		'email' => 'kasun4it@gmail.com',
                 'role' => 'admin',
-        		'password' => Hash::make('intech@123')
+        		'password' => Hash::make('password@123')
         	]);
         }
 
-        $user1 = User::where('email', 'info.intechcollege@gmail.com')->first();
+        $user1 = User::where('email', 'user@areducations.lk')->first();
 
         if(!$user1) {
         	User::create([
-        		'name' => 'Intech',
-        		'email' => 'info.intechcollege@gmail.com',
+        		'name' => 'User',
+        		'email' => 'user@areducations.lk',
                 'role' => 'user',
-        		'password' => Hash::make('intech@123')
+        		'password' => Hash::make('password@123')
         	]);
         }
     }

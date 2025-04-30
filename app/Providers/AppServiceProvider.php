@@ -16,6 +16,10 @@ use App\Models\Gallery;
 
 use App\Models\Effect;
 
+use App\Models\Course;
+
+use App\Models\CourseType;
+
 use App\Models\Enquiry;
 
 class AppServiceProvider extends ServiceProvider
@@ -43,5 +47,6 @@ class AppServiceProvider extends ServiceProvider
         View::share('gallery_content', Gallery::find(1));
         View::share('christmas_effect', Effect::find(2));
         View::share('email_notifications', Enquiry::where('views', 0));
+        View::share('courses_count', Course::count());
     }
 }

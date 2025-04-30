@@ -18,7 +18,7 @@ class GallerySeeder extends Seeder
     public function run()
     {
         $gallery = Gallery::create([
-            'show_nav' => TRUE,
+            'show_nav' => FALSE,
             'sub_heading' => 'Our Gallery'
         ]);
 

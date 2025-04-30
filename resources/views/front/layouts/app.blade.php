@@ -1,7 +1,8 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <!-- meta tags -->
+    
+<!-- Mirrored from layerdrops.com/meipaly/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jan 2020 09:02:31 GMT -->
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,225 +15,275 @@
     <meta name="description" content="
     @yield('meta_description')
     " >
-    
-    <link rel='shortcut icon' type='image/x-icon' href='{{ asset('front/images/favicon.ico') }}' />
-    <!-- title tag -->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('front/css/uikit.min.css') }}">
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="{{ asset('front/font-awesome/css/all.min.css') }}">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="{{ asset('front/css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('front/css/page.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.min.css') }}">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('front/css/stylesheet.css') }}">
+        <!-- Include All CSS here-->
+        <link rel="stylesheet" href="{{ asset('front-modified/css/bootstrap.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/owl.carousel.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/owl.theme.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/font-awesome.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/animate.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/magnific-popup.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/settings.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/slick.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/icons.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/preset.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/theme.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/responsive.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/presets/color1.css') }}" id="colorChange"/>
+        <link rel="stylesheet" href="{{ asset('front-modified/css/custom.css') }}"/>
 
-    @yield('css')
-    
-    <script src="{{ asset('front/js/uikit.min.js') }}"></script>
-    <script src="{{ asset('front/js/uikit-icons.min.js') }}"></script>
-    <!-- Facebook Pixel Code -->
+        @yield('css')
+        <!-- End Include All CSS -->
 
-<script>
+        <!-- Favicon Icon -->
+        <link rel='shortcut icon' type='image/x-icon' href="{{ asset('front-modified/images/favicon.ico') }}" />
 
-
-  !function(f,b,e,v,n,t,s)
-  
-  
-  
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  
-  
-  
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  
-  
-  
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  
-  
-  
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  
-  
-  
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  
-  
-  
-  s.parentNode.insertBefore(t,s)}(window,document,'script',
-  
-  
-  
-  'https://connect.facebook.net/en_US/fbevents.js');
-  
-  
-  
-  fbq('init', '1077709756329390');
-  
-  
-  
-  fbq('track', 'PageView');
-  
-  
-  </script>
-  
-  <noscript>
-  
-  <img height="1" width="1"
-  
-  src="https://www.facebook.com/tr?id=1077709756329390&ev=PageView
-  
-  &noscript=1"/>
-  
-  </noscript>
-  
-  <!-- End Facebook Pixel Code -->
-  </head>
-  <body>
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-      <div class="jumper">
-          <div></div>
-          <div></div>
-          <div></div>
-      </div>
-  </div>
-  <div class="fixed-spinner loader">
-    <div>
-      <h5 class="mb-3"><span class="fw-500" data-typing="Wait..., Sending the message..., Almost there..., A moment..., Keep calm..., Bear with us..." data-type-speed="80"></span></h5>
-      <span uk-spinner="ratio: 2"></span>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-    <div class="header-full">
-      <div class="uk-container">
-        <div class="header-row uk-flex uk-flex-middle uk-flex-between@m uk-flex-column uk-flex-row@m">
-          <div>
-            <a href="{{ URL::to('') }}" title="{{ $companyDetails->company_name }} | Home"><img src="{{ asset('front/images/logo.png') }}" class="" alt="{{ $companyDetails->company_name }}"></a>
-          </div>
-          <div>
-            <nav class="uk-navbar-container" data-uk-navbar>
-              <div class="uk-navbar-left">
-                <div class="navbar-container" id="sidenav">
-                  <a href="" class="close-nav uk-hidden@m" data-uk-close></a>
-                  <ul class="uk-navbar-nav">
-                      <li><a href="{{ URL::to('') }}">HOME</a></li>
-                      @foreach ($showNavigationList as $showNavigationItem)
-                      <li><a href="{{ URL::to('/') . '/page/' . $showNavigationItem->url }}">{{ $showNavigationItem->name }}</a></li>
-                      @endforeach
-                      <li><a href="{{ URL::to('all-courses') }}">ALL COURSES</a></li>
-                      {{-- <li><a href="https://intech.webcocrm.com/register/" target="_blank">Register</a></li> --}}
-                      @if ($blog_content->show_nav)
-                      <li><a href="{{ URL::to('blog') }}">Blog</a></li>
-                      @endif
-                      @if ($gallery_content->show_nav)
-                      <li><a href="{{ URL::to('galleries') }}">Gallery</a></li>
-                      @endif
-                      <li><a href="{{ URL::to('contact') }}">CONTACT</a></li>
-                      {{-- <li><a class="custom btn-round" href="http://intech.webcolms.com/" target="_blank">LOGIN &nbsp; <i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></a></li> --}}
-                  </ul>
-                </div>
-                <a id="toggle" class="uk-navbar-toggle uk-hidden@m" data-uk-navbar-toggle-icon ></a>
-              </div>
-            </nav>
-            <div class="search-parent-div uk-flex uk-flex-middle">
-              <div>
-                  <div style="position: relative;">
-                      <span class="uk-form-icon" data-uk-icon="icon: search"></span>
-                      <input class="uk-input" id="searchCourses" onfocusout="clearCourseDiv()" type="text" placeholder="Search your course here...">
-                  </div>
-                  <div id="coursesDiv"></div>
-                  {{ csrf_field() }}
-              </div>
-              <div>
-                <a class="custom btn-round" href="https://lms.intech.edu.lk/" target="_blank">LOGIN &nbsp; <i class="fas fa-arrow-right" style="transform: rotate(-45deg);"></i></a>
-              </div>
+        <style>
+            canvas#canv {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+            .santa {
+                position: fixed;
+                bottom: 30px;
+            }
+            a, p, h1, h2, h3, h4, h5, h6 {
+                position: relative;
+                z-index: 5;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Preloading -->
+        <div class="preloader text-center">
+            <div class="la-ball-circus la-2x">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    
-    @yield('content')
-    <div class="contact-full">
-      <div class="uk-container">
-        <div data-uk-scrollspy="target: > h2: uk-animation-slide-bottom; delay: 100">
-          <h2 class="uk-text-center">Join With Our <span data-provide="countup" data-from="0" data-to="1000"></span>+ Happy Students​ Today!</h2>
-          <div class="uk-text-center">
-            <a href="{{ URL::to('all-courses'); }}" class="common-btn btn-round">Start Learning</a>
-          </div>
-          <div class="uk-grid-column-small uk-grid-row-medium uk-flex-middle uk-child-width-1-2@m uk-child-width-1-4@l" data-uk-grid="">
-            <div>
-              <img src="{{ asset('front/images/logo-big.png') }}" alt="" style="filter: brightness(0) invert(1);">
-            </div>
-            <div>
-              <ul class="contact">
-                <li><a href="tel:{{ trim_spaces($companyDetails->telephone) }}">{{ $companyDetails->telephone }}</a></li>
-                <li><a href="tel:{{ trim_spaces($companyDetails->mobile) }}">{{ $companyDetails->mobile }}</a></li>
-                <li><a href="tel:{{ trim_spaces($companyDetails->additional_tel) }}">{{ $companyDetails->additional_tel }}</a></li>
-                <li><a href="mailto:{{ $companyDetails->email }}">{{ $companyDetails->email }}</a></li>
-              </ul>
-            </div>
-            <div class="uk-text-center">
-              <div class="social-media">
-                <a href="{{ isset($companyDetails->facebook) ? $companyDetails->facebook : '#' }}" target="_blank"><img src="{{ asset('front/images/fb-icon.png') }}" alt="facebook"></a>
-                <a href="{{ isset($companyDetails->twitter) ? $companyDetails->twitter : '#' }}" target="_blank"><img src="{{ asset('front/images/insta-icon.png') }}" alt="instagram"></a>
-                <a href="{{ isset($companyDetails->youtube) ? $companyDetails->youtube : '#' }}" target="_blank"><img src="{{ asset('front/images/youtube-icon.png') }}" alt="youtube"></a>
-              </div>
-            </div>
-            <div>
-              <ul class="address">
-                <li><span>{{ $companyDetails->address1 }}, {{ $companyDetails->address2 }},<br>
-                  {{ $companyDetails->city }}, {{ $companyDetails->country }}.</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    @if ($companyDetails->map)
-    <div class="map-container">
-      {!! $companyDetails->map !!}
-    </div>
-    @endif
-    
-
-    <div class="footer-full">
-      <div class="uk-container">
-        <div class="copyright uk-text-center">
-          <p>Copyright <i class="far fa-copyright"></i> <?php echo date("Y"); ?> {{ $companyDetails->company_name }} - All Rights Reserved</p>
-        </div>
-      </div>
-    </div>
-
-    <a id="back-to-top" class="back_to_top" href="#top" data-uk-scroll=""><span data-uk-icon="arrow-up"></span></a>
-
-    <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS, LightBox JS -->
-    <script src="{{ asset('front/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('front/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('front/js/jarallax.min.js') }}"></script>
-    <script src="{{ asset('front/js/single.js') }}"></script>
-    <script src="{{ asset('front/js/page.js') }}"></script>
-    <script src="{{ asset('front/js/script.js') }}"></script>
-
-
-    <!-- __________________    Christmas effect   ______________________ -->
-    @if ($christmas_effect->visibility == TRUE)
+        <!-- Preloading -->
+        @if ($christmas_effect->visibility == TRUE)
     <canvas id='canv'> </canvas>
-    <script src="{{ asset('front/js/snowfall.jquery.min.js') }}"></script>
-    <div class="santa"><img src="{{ asset('front/images/effects/christmas-sled-source_ulp.gif') }}" alt="santa"></div>
+    @endif
+
+        <!-- Header 01 -->
+        <header class="header_01" id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
+                        <div class="logo">
+                            <a href="{{ URL::to('') }}"><img src="{{ asset('front-modified/images/logo.png') }}" alt="{{ $companyDetails->company_name }}"/></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-sm-7 col-md-8">
+                        <nav class="mainmenu text-right">
+                            <ul>
+                                <li>
+                                    <a href="{{ URL::to('') }}">home</a>
+                                </li>
+                                @foreach ($showNavigationList as $showNavigationItem)
+                                <li><a href="{{ URL::to('/') . '/page/' . $showNavigationItem->url }}">{{ $showNavigationItem->name }}</a></li>
+                                @endforeach
+                                <li><a href="{{ URL::to('all-courses') }}">All Courses</a></li>
+                                @if ($blog_content->show_nav)
+                                <li><a href="{{ URL::to('blog') }}">Blog</a></li>
+                                @endif
+                                @if ($gallery_content->show_nav)
+                                <li><a href="{{ URL::to('galleries') }}">Gallery</a></li>
+                                @endif
+                                
+                                <li style="padding-right: 0;"><a href="{{ URL::to('contact') }}">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-1 col-sm-2 col-md-1 col-xs-12">
+                        <div class="navigator text-right">
+                            <a class="search searchToggler" href="javascript:void(0);"><i class="mei-magnifying-glass" style="text-shadow: 0 0 1px #fff;"></i></a>
+                            <!-- <a href="javascript:void(0);" class="menu mobilemenu hidden-sm hidden-md hidden-lg hidden-xs"><i class="mei-menu"></i></a> -->
+                            <a id="open-overlay-nav" class="menu hamburger hidden-md hidden-lg" href="javascript:void(0);"><i class="mei-menu"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header 01 -->
+
+        <!-- Search From -->
+        <div class="searchFixed popupBG">
+            <div class="container-fluid">
+                <a href="#" id="sfCloser" class="sfCloser"></a>
+                <div class="searchForms">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <!-- <form method="post" action="#">
+                                    <input type="text" name="s" class="searchField" placeholder="Search here..."/>
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form> -->
+                                <div>
+                                    <div style="position: relative;">
+                                        <!-- <span class="uk-form-icon" data-uk-icon="icon: search"></span> -->
+                                        <input class="searchField" autocomplete="off" id="searchCourses" onfocusout="
+                                        ()" type="text" placeholder="Search your course here...">
+                                    </div>
+                                    <div id="coursesDiv"></div>
+                                    {{ csrf_field() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Search From -->
+
+        <!-- PopUP Menu -->
+        <div class="popup popup__menu">
+            <a href="#" id="close-popup" class="close-popup"></a>
+            <div class="container mobileContainer">
+                <div class="row">
+                    <div class="col-lg-12 text-left">
+                        <div class="logo2">
+                            <a href="{{ URL::to('') }}"><img src="{{ asset('front-modified/images/logo.png') }}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="popup-inner">
+                            <div class="dl-menu__wrap dl-menuwrapper">
+                                <ul class="dl-menu dl-menuopen">
+                                    <li>
+                                        <a href="{{ URL::to('') }}">home</a>
+                                    </li>
+                                    @foreach ($showNavigationList as $showNavigationItem)
+                                    <li><a href="{{ URL::to('/') . '/page/' . $showNavigationItem->url }}">{{ $showNavigationItem->name }}</a></li>
+                                    @endforeach
+                                    <li><a href="{{ URL::to('all-courses') }}">All Courses</a></li>
+                                    @if ($blog_content->show_nav)
+                                    <li><a href="{{ URL::to('blog') }}">Blog</a></li>
+                                    @endif
+                                    @if ($gallery_content->show_nav)
+                                    <li><a href="{{ URL::to('galleries') }}">Gallery</a></li>
+                                    @endif
+                                    
+                                    <li><a href="{{ URL::to('contact') }}">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
+                        <ul class="footer__contacts text-left">
+                            <li>Phone: <a href="tel:{{ trim_spaces($companyDetails->telephone) }}">{{ $companyDetails->telephone }}</a></li>
+                            <li>Mobile: <a href="tel:{{ trim_spaces($companyDetails->mobile) }}">{{ $companyDetails->mobile }}</a></li>
+                            <li>Email: <a href="mailto:{{ $companyDetails->email }}">{{ $companyDetails->email }}</a></li>
+                            <!-- <li>{{ $companyDetails->address1 }}, {{ $companyDetails->address2 }}, {{ $companyDetails->city }}, {{ $companyDetails->country }}</li> -->
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-12 col-xs-12">
+                        <div class="popUp_social text-right">
+                            <ul>
+                                <li><a href="{{ isset($companyDetails->instagram) ? $companyDetails->instagram : '#' }}" target="_blank"><i class="fa fa-instagram"></i>Instagram</a></li>
+                                <li><a href="{{ isset($companyDetails->facebook) ? $companyDetails->facebook : '#' }}" target="_blank"><i class="fa fa-facebook-square"></i>Facebook</a></li>
+                                <li><a href="{{ isset($companyDetails->youtube) ? $companyDetails->youtube : '#' }}" target="_blank"><i class="fa fa-youtube-play"></i>Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PopUP Menu -->
+
+        @yield('content')
+
+        <!-- Footer Section -->
+        <footer class="footer_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-sm-6 col-md-5">
+                        <aside class="widget aboutwidget">
+                            <a href="{{ URL::to('') }}"><img src="{{ asset('front-modified/images/logo.png') }}" alt="{{ $companyDetails->company_name }} "></a>
+                            {!! App\Http\Controllers\WelcomeController::renderBlock(8); !!}
+                        </aside>
+                    </div>
+                    <div class="col-lg-4 col-sm-4 col-md-4">
+                        <aside class="widget contact_widgets">
+                            <h3 class="widget_title">contact</h3>
+                            <!-- <p>
+                            {{ $companyDetails->address1 }}, {{ $companyDetails->address2 }},<br>
+                  {{ $companyDetails->city }}, {{ $companyDetails->country }}.
+                            </p> -->
+                            <p>Phone: <a href="tel:{{ trim_spaces($companyDetails->telephone) }}">{{ $companyDetails->telephone }}</a></p>
+                            <p>Mobile: <a href="tel:{{ trim_spaces($companyDetails->mobile) }}">{{ $companyDetails->mobile }}</a></p>
+                            <p>Email: <a href="mailto:{{ $companyDetails->email }}">{{ $companyDetails->email }}</a></p>
+                        </aside>
+                    </div>
+                    <div class="col-lg-3 col-sm-2 col-md-3">
+                        <aside class="widget social_widget">
+                            <h3 class="widget_title">social</h3>
+                            <ul>
+                                <li><a href="{{ isset($companyDetails->instagram) ? $companyDetails->instagram : '#' }}" target="_blank"><i class="fa fa-instagram"></i>Instagram</a></li>
+                                <li><a href="{{ isset($companyDetails->facebook) ? $companyDetails->facebook : '#' }}" target="_blank"><i class="fa fa-facebook-square"></i>Facebook</a></li>
+                                <li><a href="{{ isset($companyDetails->youtube) ? $companyDetails->youtube : '#' }}" target="_blank"><i class="fa fa-youtube-play"></i>Youtube</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 text-center">
+                        <div class="copyright">
+                            <p>Copyright © <?php echo date("Y"); ?> {{ $companyDetails->company_name }} - All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section -->
+
+        <!-- Bact To To -->
+        <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
+        <!-- Bact To To -->
+
+        <!-- Include All JS -->
+        <script src="{{ asset('front-modified/js/jquery.js') }}"></script>
+        <script src="{{ asset('front-modified/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('front-modified/js/modernizr.custom.js') }}"></script>
+        <script src="{{ asset('front-modified/js/gmaps.js') }}"></script>
+        <script src="{{ asset('front-modified/js/jquery.themepunch.revolution.min.js') }}"></script>
+        <script src="{{ asset('front-modified/js/jquery.themepunch.tools.min.js') }}"></script>
+        <!-- Rev slider Add on Start -->
+        <script src="{{ asset('front-modified/js/extensions/revolution.extension.actions.min.js') }}"></script>
+        <script src="{{ asset('front-modified/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+        <script src="{{ asset('front-modified/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+        <script src="{{ asset('front-modified/js/extensions/revolution.extension.migration.min.js') }}"></script>
+        <script src="{{ asset('front-modified/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+        <script src="{{ asset('front-modified/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+        <script src="{{ asset('front-modified/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+        <script src="{{ asset('front-modified/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+        <script src="{{ asset('front-modified/js/extensions/revolution.extension.video.min.js') }}"></script>
+        <!-- Rev slider Add on End -->
+        <script src="{{ asset('front-modified/js/dlmenu.js') }}"></script>
+        <script src="{{ asset('front-modified/js/jquery.magnific-popup.js') }}"></script>
+        <script src="{{ asset('front-modified/js/mixer.js') }}"></script>
+        <script src="{{ asset('front-modified/js/jquery.easing.1.3.js') }}"></script>
+        <script src="{{ asset('front-modified/js/owl.carousel.js') }}"></script>
+        <script src="{{ asset('front-modified/js/slick.js') }}"></script>
+        <script src="{{ asset('front-modified/js/jquery.appear.js') }}"></script>
+        <script src="{{ asset('front-modified/js/theme.js') }}"></script>
+
+        @yield('scripts')
+
+        @if ($christmas_effect->visibility == TRUE)
+    <script src="{{ asset('front-modified/js/snowfall.jquery.min.js') }}"></script>
+    <div class="santa"><img src="{{ asset('front-modified/images/effects/christmas-sled-source_ulp.gif') }}" alt="santa"></div>
     <script>
       jQuery(function($) {
 
@@ -321,107 +372,6 @@
       });
   </script>
     @endif
-  <!-- __________________    Christmas effect   ______________________ -->
-    <script>
-    if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
-
-    } else {
-        // $('.container-b-full').jarallax({ speed: 0.6 });
-    }
-    </script>
-    <script>
-
-        // $('.testimonial-slider').owlCarousel({
-        //     loop:true,
-        //     autoplay:true,
-        //     nav:false,
-        //     items:1,
-        //     dots: true
-        // });
-
-        // ----------------- temp
-
-        $(document).ready(function(){
-            // $('a[href^="#"]').each(function(){ 
-            //     var oldUrl = $(this).attr("href"); // Get current url
-            //     var newUrl = oldUrl.replace("#", "#messegePopup"); // Create new url
-            //     $(this).attr("href", newUrl); // Set herf value
-            // });
-        });
-        
-        // ----------------- temp
-
-        
-        // $('.about-us .accordion li:nth-child(1) a')[0].click();
-
-        // window.addEventListener('scroll', ()=>{
-        //   let accordion = document.querySelector('.about-us .accordion');
-        //   let accordionAnchor = document.querySelector('.about-us .accordion li:nth-child(1) a');
-        //   let accordionPosition = accordion.getBoundingClientRect().top;
-        //   let screenPosition = window.innerHeight;
-        //   if(accordionPosition < screenPosition) {
-        //     if(!accordion.classList.contains('uk-open')) {
-        //       accordionAnchor.click();
-        //     }
-        //   }
-        // })
-
-        if ($('#back-to-top').length) {
-            var scrollTrigger = 100, // px
-                backToTop = function() {
-                    var scrollTop = $(window).scrollTop();
-                    if (scrollTop > scrollTrigger) {
-                        $('#back-to-top').addClass('show');
-                    } else {
-                        $('#back-to-top').removeClass('show');
-                    }
-              };
-            backToTop();
-            $(window).on("scroll", function() {
-                backToTop();
-            });
-        }
-
-        const menuToggle = document.querySelector("#toggle");
-        const showcase = document.querySelector("#sidenav");
-        const closeNav = document.querySelector(".close-nav");
-
-        menuToggle.addEventListener("click", () => {
-            menuToggle.classList.toggle("active");
-            showcase.classList.toggle("active");
-        });
-
-        closeNav.addEventListener("click", (e) => {
-            e.preventDefault();
-            showcase.classList.remove("active");
-        });
-
-
-
-    </script>
-
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "1754624621254779");
-      chatbox.setAttribute("attribution", "biz_inbox");
-
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v12.0'
-        });
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_GB/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-    @yield('scripts')
 
     <script>
       $(document).ready(function(){
@@ -444,10 +394,9 @@ $('#searchCourses').keyup(function(){
    });
 
 });
-
-// function clearCourseDiv() {
-//   $('#coursesDiv').fadeOut();
-// }
     </script>
-  </body>
+        <!-- Include All JS -->
+    </body>
+
+<!-- Mirrored from layerdrops.com/meipaly/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Jan 2020 09:02:31 GMT -->
 </html>

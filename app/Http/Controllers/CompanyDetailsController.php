@@ -21,7 +21,7 @@ class CompanyDetailsController extends Controller
 
         $companyDetail = CompanyDetail::first();
 
-        $data = $request->only(['company_name', 'description', 'email', 'telephone', 'mobile', 'additional_tel', 'fax', 'registration_number', 'address1', 'address2', 'city', 'country', 'map', 'facebook', 'twitter', 'youtube']);
+        $data = $request->only(['company_name', 'description', 'email', 'telephone', 'mobile', 'additional_tel', 'fax', 'registration_number', 'address1', 'address2', 'city', 'country', 'map', 'facebook', 'instagram', 'youtube']);
 
         $companyDetail->update($data);
 

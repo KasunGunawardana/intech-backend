@@ -29,7 +29,7 @@ class CreateCompanyDetailsTable extends Migration
             $table->string('country')->nullable();
             $table->text('map')->nullable();
             $table->text('facebook')->nullable();
-            $table->text('twitter')->nullable();
+            $table->text('instagram')->nullable();
             $table->text('youtube')->nullable();
             $table->timestamps();
         });

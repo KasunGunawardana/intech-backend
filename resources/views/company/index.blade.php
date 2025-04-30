@@ -111,8 +111,8 @@
                     </div>
 
                     <div class="uk-margin input-wrapper ">
-                        <label class="uk-form-label" for="twitter">Instagram</label>
-                        <input class="uk-input" id="twitter" name="twitter" type="text" placeholder="Instagram link" value="{{ (isset($company)) ? $company->twitter : ''}}">
+                        <label class="uk-form-label" for="instagram">Instagram</label>
+                        <input class="uk-input" id="instagram" name="instagram" type="text" placeholder="Instagram link" value="{{ (isset($company)) ? $company->instagram : ''}}">
                         <div class="uk-margin-small-top small-note"><span class="uk-badge">Note</span>[Paste the Instagram link here]</div>
                     </div>
 

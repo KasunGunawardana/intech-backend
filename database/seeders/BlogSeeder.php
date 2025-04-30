@@ -20,7 +20,7 @@ class BlogSeeder extends Seeder
         $blog = Blog::create([
             'show_nav' => FALSE,
             'description_heading' => 'About Us',
-            'description' => 'INTECH marks our unique authenticity by training our students with industry related exercises and up-to-date knowledge.',
+            'description' => 'AR Educations marks our unique authenticity by training our students with industry related exercises and up-to-date knowledge.',
         ]);
 
         $category1 = Category::create([
